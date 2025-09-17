@@ -1,261 +1,61 @@
-# Laravel Docker with FrankenPHP
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-A modern, production-ready Laravel application setup using Docker and [FrankenPHP](https://frankenphp.dev/) - a modern app server for PHP built on top of Caddy.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-## ✨ Features
+## About Laravel
 
-- 🚀 **FrankenPHP** - Modern PHP app server with automatic HTTPS, HTTP/2, and HTTP/3 support
-- 🐳 **Multi-stage Docker builds** - Optimized for both development and production
-- 🔄 **Laravel Octane** - High-performance application server for Laravel
-- 📦 **PostgreSQL** - Robust database with health checks
-- ⚡ **Vite** - Fast frontend asset building
-- 🛠️ **Xdebug** - Debugging support in development
-- 📧 **MailHog** - Email testing in development
-- 🎯 **Hot reload** - File watching in development mode
-- 📊 **Health checks** - Built-in monitoring endpoints
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## 🏗️ Architecture
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-### Development Environment
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-- **FrankenPHP with Xdebug** - PHP 8.4 with debugging capabilities
-- **File watching** - Automatic reloading on code changes
-- **Volume mounting** - Real-time code synchronization
-- **MailHog** - Local email testing server
+## Learning Laravel
 
-### Production Environment
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-- **Optimized FrankenPHP** - Production PHP configuration
-- **Pre-built assets** - Compiled frontend assets included
-- **Laravel optimization** - Route, config, and view caching
-- **Composer optimization** - Authoritative classmap autoloader
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-## 🚀 Quick Start
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-### Prerequisites
+## Laravel Sponsors
 
-- Docker and Docker Compose
-- Make (optional, for convenient commands)
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Development Setup
+### Premium Partners
 
-1. **Clone the repository**
+- **[Vehikl](https://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Redberry](https://redberry.international/laravel-development)**
+- **[Active Logic](https://activelogic.com)**
 
-   ```bash
-   git clone <repository-url>
-   cd laravel-docker
-   ```
+## Contributing
 
-2. **Start development environment**
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-   ```bash
-   # Using Make (recommended)
-   make start
+## Code of Conduct
 
-   # Or using Docker Compose directly
-   docker compose up --build
-   ```
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-3. **Access the application**
-   - **Application**: https://localhost (with automatic HTTPS)
-   - **MailHog**: http://localhost:8025
-   - **Health Check**: https://localhost:2019/metrics
+## Security Vulnerabilities
 
-### Production Deployment
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-1. **Build and start production containers**
+## License
 
-   ```bash
-   # Using Make
-   make build-prod
-   make up-prod
-
-   # Or using Docker Compose
-   docker compose -f compose.yaml -f compose.prod.yaml up --build -d
-   ```
-
-## 🛠️ Available Commands
-
-### Docker Management
-
-```bash
-make build          # Build development images
-make build-prod     # Build production images
-make up             # Start containers (development)
-make up-prod        # Start containers (production)
-make down           # Stop and remove containers
-make logs           # View container logs
-make sh             # Access application container shell
-```
-
-### Laravel Commands
-
-```bash
-make artisan                    # List Artisan commands
-make artisan c="migrate"        # Run specific Artisan command
-make artisan c="make:model User" # Create new model
-make cc                         # Clear application cache
-```
-
-### Composer Commands
-
-```bash
-make composer                           # Show Composer help
-make composer c="require package/name"  # Install new package
-make composer c="update"                # Update dependencies
-make vendor                             # Install production dependencies
-```
-
-## 📁 Project Structure
-
-```
-├── frankenphp/                 # FrankenPHP configuration
-│   ├── conf.d/                # PHP configuration files
-│   └── docker-entrypoint.sh   # Container startup script
-├── compose.yaml               # Base Docker Compose configuration
-├── compose.override.yaml      # Development overrides
-├── compose.prod.yaml          # Production overrides
-├── Dockerfile                 # Multi-stage Docker build
-└── Makefile                   # Convenient command shortcuts
-```
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Create a `.env` file based on `.env.example`:
-
-```bash
-# Database
-DB_CONNECTION=pgsql
-DB_HOST=database
-DB_PORT=5432
-DB_DATABASE=app
-DB_USERNAME=app
-DB_PASSWORD=!ChangeMe!
-
-# Application
-APP_ENV=local
-APP_DEBUG=true
-APP_URL=https://localhost
-
-# Mail (Development)
-MAIL_MAILER=smtp
-MAIL_HOST=mailer
-MAIL_PORT=1025
-```
-
-### PHP Configuration
-
-PHP settings can be customized in:
-
-- `frankenphp/conf.d/10-app.ini` - Base configuration
-- `frankenphp/conf.d/20-app.dev.ini` - Development overrides
-- `frankenphp/conf.d/20-app.prod.ini` - Production overrides
-
-### Database Persistence
-
-By default, database data is stored in Docker volumes. For production, you can use bind mounts:
-
-```yaml
-# In compose.prod.yaml
-volumes:
-  - ./docker/db/data:/var/lib/postgresql/data:rw
-```
-
-## 🚨 Troubleshooting
-
-### Container Fails to Start
-
-```bash
-# Check container logs
-make logs
-
-# Rebuild containers
-make down
-make build
-make up
-```
-
-### Permission Issues
-
-```bash
-# Fix file permissions
-docker compose exec app chown -R www-data:www-data /app/storage /app/bootstrap/cache
-```
-
-### Database Connection Issues
-
-```bash
-# Check database status
-docker compose exec database pg_isready -d app -U app
-
-# Reset database
-make artisan c="migrate:fresh --seed"
-```
-
-### Clear All Caches
-
-```bash
-make artisan c="optimize:clear"
-make cc
-```
-
-## 🔒 Security
-
-### Production Checklist
-
-- [ ] Change default database password
-- [ ] Set strong `APP_KEY` (automatically generated)
-- [ ] Configure proper `APP_URL`
-- [ ] Set `APP_DEBUG=false`
-- [ ] Review and secure file permissions
-- [ ] Configure backup strategy
-- [ ] Set up monitoring and logging
-
-### Default Passwords
-
-⚠️ **Change these in production:**
-
-- Database password: `!ChangeMe!`
-
-## 📊 Monitoring
-
-### Health Checks
-
-- **Application**: https://localhost:2019/metrics
-- **Database**: Built-in PostgreSQL health checks
-- **Container status**: `docker compose ps`
-
-### Performance
-
-The production build includes:
-
-- Laravel optimization (routes, config, views)
-- Composer autoloader optimization
-- OPcache for PHP performance
-- Asset compilation and optimization
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test in both development and production modes
-5. Submit a pull request
-
-## 📄 License
-
-This project is open-sourced software licensed under the [MIT license](LICENSE).
-
-## 🆘 Support
-
-For issues related to:
-
-- **Laravel**: [Laravel Documentation](https://laravel.com/docs)
-- **FrankenPHP**: [FrankenPHP Documentation](https://frankenphp.dev/docs/)
-- **Docker**: [Docker Documentation](https://docs.docker.com/)
-
----
-
-**Made with ❤️ using Laravel, FrankenPHP, and Docker**
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
