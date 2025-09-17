@@ -1,0 +1,7 @@
+**/node_modules/
+Dockerfile
+compose.yaml
+compose.override.yaml
+compose.prod.yaml
+LICENSE
+README.md

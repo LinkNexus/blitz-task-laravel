@@ -1,0 +1,15 @@
+/**
+!.gitignore
+!frankenphp/**
+!compose.override.yaml
+!compose.yaml
+!compose.prod.yaml
+!Dockerfile
+!LICENSE
+!.dockerignore
+!Makefile
+!README.md
+!.php-cs.xml
+!.bladeformatter.json
+!.editorconfig
+!pint.json
