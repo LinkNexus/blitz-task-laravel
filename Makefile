@@ -44,6 +44,10 @@ logs: ## Show live logs
 sh: ## Connect to the FrankenPHP container
 	@$(PHP_CONT) sh
 
+typegen: ## Genrates all typescript from our php classes and models
+	@$(DOCKER_COMP) exec app composer run typegen
+	@$(DOCKER_COMP) exec app npm run typegen
+
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'
 	@$(eval c ?=)
@@ -60,3 +64,4 @@ artisan: ## List all Laravel Artisan commands or pass the parameter "c=" to run 
 
 cc: c=cache:clear ## Clear the cache
 cc: artisan
+
