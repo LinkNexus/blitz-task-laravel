@@ -35,6 +35,9 @@ up-prod: ## Start the Docker containers in detached mode for production (no logs
 
 start: build up ## Build and start the containers
 
+stop: ## Stop the Docker containers
+	@$(DOCKER_COMP) stop
+
 down: ## Stop the Docker containers
 	@$(DOCKER_COMP) down --remove-orphans
 

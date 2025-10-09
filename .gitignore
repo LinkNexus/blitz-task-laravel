@@ -30,3 +30,4 @@ frankenphp-worker.php
 ./.php-cs-fixer.cache
 ./resources/types/generated.d.ts
 ./_ide_helper.php
+_ide_helper.php
